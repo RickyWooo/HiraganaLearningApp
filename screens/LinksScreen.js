@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { ScrollView, StyleSheet, Button, Text,View,Image,TouchableHighlight } from 'react-native';
 import { ExpoLinksView } from '@expo/samples';
 import kana_json from '../hiragana/kana.json'
+import { Audio } from 'expo-av'
+
 
 class HiraganaChar extends Component {
   constructor(props) {
@@ -38,7 +40,7 @@ class HiraganaChar extends Component {
     return [romaji,hiragana]
   }
   async _playHiraganaSound(){
-    const soundObject = new Expo.Audio.Sound();
+    const soundObject = new Audio.Sound()
     let char = this.children.props.children.props.children
     try {
       // let HiraganaMP3 = `../sounds/50yin/${char}.mp3`
