@@ -12,19 +12,18 @@ class HiraganaChar extends Component {
   }
   render() {
     return (
-      <View style={{alignItems: 'center'}}>
-        {/* <Button style={styles.titleText} title={this.state.char[1]}
-          onPress={this._playHiraganaSound}
-        /> */}
-        <TouchableHighlight onPress={this._playHiraganaSound} underlayColor="white">
-          <View style={styles.container}>
-            <Text style={styles.titleText}>{this.state.char[1]}</Text>
-          </View>
-        </TouchableHighlight>
- 
-        <Text style={styles.titleText}>
-          {this.state.char[0]}
-        </Text>
+      // <View style={styles.charContainer}>
+      //   <TouchableHighlight onPress={this._playHiraganaSound} underlayColor="white">
+      //       <Text style={styles.titleText}>{this.state.char[1]}</Text>
+      //   </TouchableHighlight>
+      //   <Text style={styles.romanText}>
+      //     {this.state.char[0]}
+      //   </Text>
+      // </View>
+      <View style={{ flex: 1,
+        justifyContent: 'center', // Used to set Text Component Vertically Center
+        alignItems: 'center'}}>
+        <Text>Vertically Centered Text</Text>
       </View>
     );
   }
@@ -62,7 +61,7 @@ export default function LinksScreen() {
 }
 
 LinksScreen.navigationOptions = {
-  title: 'Links',
+  title: 'Link',
 };
 
 const styles = StyleSheet.create({
@@ -72,7 +71,15 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
   },
   titleText: {
-    fontSize: 40,
+    fontSize: 96,
     fontWeight: 'bold',
   },
+  romanText: {
+    fontSize: 50,
+    fontWeight: 'bold',
+  },
+  charContainer: {
+    alignContent: 'center',
+    alignItems: 'center'
+  }
 });
